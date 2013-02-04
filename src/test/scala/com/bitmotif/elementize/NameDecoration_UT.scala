@@ -14,9 +14,15 @@ class NameDecoration_UT extends FunSpec {
     it("Should put vertical bars on both sides of the two letter abbreviation") {
       val nameDecoration = new NameDecoration()
 
-      val decorated = nameDecoration.elementized("Anna Fredickson")
+      val decorated = nameDecoration.elementize("Anna Ferris")
 
-      assert(decorated === "An|Na| Fredickson")
+val expected =
+"""   __
+  |  |  |
+  |An|Na| Ferris
+  |  |__|""".stripMargin
+
+      assert(decorated === expected)
     }
   }
 

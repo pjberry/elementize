@@ -11,7 +11,16 @@ class NameDecoration {
 
   val lowerCaseElementAbbreviations = elementAbbreviations.map(_.toLowerCase)
 
-  def elementized(name: String) = {
+  def elementize(name: String) = {
+    val elementized = elementized_private(name)
+    val elementStart = elementized.indexOf("|")
+    val top = List().padTo(elementStart + 1, " ").mkString + "__"
+    val sides = List().padTo(elementStart , " ").mkString + "|  |"
+    val bottom = List().padTo(elementStart , " ").mkString + "|__|"
+    top + "\n" + sides + "\n" + elementized + "\n" + bottom
+  }
+
+  private def elementized_private(name: String) = {
     val charList = name.toList
     val chunkedName = charList.sliding(2).toList
 
@@ -36,16 +45,4 @@ class NameDecoration {
     // elementize
     (beforeElement ::: decorated ::: afterTheElement).mkString
   }
-
-  def printElementizedName(name: String) {
-    val elementStart = name.indexOf("|")
-    val top = List().padTo(elementStart + 1, " ").mkString + "__"
-    val sides = List().padTo(elementStart , " ").mkString + "|  |"
-    val bottom = List().padTo(elementStart , " ").mkString + "|__|"
-    println(top)
-    println(sides)
-    println(name)
-    println(bottom)
-  }
-
 }

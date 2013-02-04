@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a61716-6b01-427a-9b9e-12eaf6ed6021" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/com/bitmotif/PlaceHolder_UT.scala" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala" afterPath="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="elementize.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/PlaceHolder_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359932318732" ignored="false" />
     <file path="/ElementizeBuild.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359938073416" ignored="false" />
-    <file path="/Dummy.txt" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359938889989" ignored="false" />
-    <file path="/NameDecoration_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359940548016" ignored="false" />
-    <file path="/NameDecoration.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359940476735" ignored="false" />
+    <file path="/Dummy.txt" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359940653678" ignored="false" />
+    <file path="/NameDecoration_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359943011042" ignored="false" />
+    <file path="/NameDecoration.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359941497381" ignored="false" />
+    <file path="/fragment.java" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359942049550" ignored="false" />
+    <file path="/a.dummy" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359942062548" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,28 +101,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlaceHolder_UT.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/PlaceHolder_UT.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="38" selection-start="131" selection-end="148" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NameDecoration.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NameDecoration.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="46" selection-start="1376" selection-end="1376" vertical-scroll-proportion="0.57593125">
+            <state line="13" column="16" selection-start="826" selection-end="826" vertical-scroll-proportion="-4.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NameDecoration_UT.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NameDecoration_UT.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="28" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0">
+            <state line="23" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.73717946">
               <folding />
             </state>
           </provider>
@@ -129,7 +122,7 @@
       <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
+            <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -233,36 +226,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitmotif" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elementize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elementize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitmotif" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -469,7 +432,7 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
     <frame x="4" y="41" width="1432" height="859" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -478,11 +441,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882273" sideWeight="0.4978355" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882273" sideWeight="0.497114" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32882273" sideWeight="0.497114" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1904762" sideWeight="0.67117727" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1904762" sideWeight="0.67117727" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -529,7 +492,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting with the simple functionality" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -542,18 +505,12 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="starting with the simple functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/PlaceHolder_UT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -571,13 +528,6 @@
     <entry file="file://$PROJECT_DIR$/project/ElementizeBuild.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="63" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/PlaceHolder_UT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -633,28 +583,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/PlaceHolder_UT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="38" selection-start="131" selection-end="148" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="28" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0">
+        <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="46" selection-start="1376" selection-end="1376" vertical-scroll-proportion="0.57593125">
+        <state line="13" column="16" selection-start="826" selection-end="826" vertical-scroll-proportion="-4.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.73717946">
           <folding />
         </state>
       </provider>
