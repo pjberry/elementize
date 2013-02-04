@@ -1,0 +1,7 @@
+A sample for the Typesafe Stack (http://typesafe.com/stack).
+
+Scala sample project using Scala and SBT.
+
+To run and test it use SBT invoke: 'sbt run'
+
+This file was modified by IntelliJ IDEA 12.0.3 for binding GitHub repository
