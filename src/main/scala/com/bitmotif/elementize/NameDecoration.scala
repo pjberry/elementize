@@ -22,11 +22,11 @@ class NameDecoration {
     }
     else if (startIndexOfElement(name, 1) != -1) {
       val elementized = elementizedTwoCharacter(name, 1)
-            val elementStart = elementized.indexOf("|")
-            val top = List().padTo(elementStart + 1, " ").mkString + "_"
-            val sides = List().padTo(elementStart , " ").mkString + "| |"
-            val bottom = List().padTo(elementStart , " ").mkString + "|_|"
-            top + "\n" + sides + "\n" + elementized + "\n" + bottom
+      val elementStart = elementized.indexOf("|")
+      val top = List().padTo(elementStart + 1, " ").mkString + "_"
+      val sides = List().padTo(elementStart , " ").mkString + "| |"
+      val bottom = List().padTo(elementStart , " ").mkString + "|_|"
+      top + "\n" + sides + "\n" + elementized + "\n" + bottom
     }
     else {
       name
