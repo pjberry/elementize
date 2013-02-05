@@ -28,13 +28,23 @@ class NameDecoration_UT extends FunSpec {
     it("should box the single letter abbreviation if there is no two letter abbreviation") {
       val nameDecoration = new NameDecoration()
 
-      val decorated = nameDecoration.elementize("Jim")
+      val decorated = nameDecoration.elementize("Jim Lee")
 
       val expected =
         """  _
           | | |
-          |J|I|m
+          |J|I|m Lee
           | |_|""".stripMargin
+
+      assert(decorated === expected)
+    }
+
+    it("should return the name modified if we can't find an element in the name") {
+      val nameDecoration = new NameDecoration()
+
+      val decorated = nameDecoration.elementize("Mel Lee")
+
+      val expected = "Mel Lee"
 
       assert(decorated === expected)
     }
