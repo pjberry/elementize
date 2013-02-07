@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" line="28" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="56a61716-6b01-427a-9b9e-12eaf6ed6021" name="Default" comment="">
+    <list default="true" id="56a61716-6b01-427a-9b9e-12eaf6ed6021" name="Default" comment="now">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -12,9 +9,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/PlaceHolder_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359932318732" ignored="false" />
     <file path="/ElementizeBuild.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359938073416" ignored="false" />
-    <file path="/Dummy.txt" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360073955086" ignored="false" />
+    <file path="/Dummy.txt" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360242634894" ignored="false" />
     <file path="/NameDecoration_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360073657925" ignored="false" />
-    <file path="/NameDecoration.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360070054532" ignored="false" />
+    <file path="/NameDecoration.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360242261862" ignored="false" />
     <file path="/fragment.java" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359942049550" ignored="false" />
     <file path="/a.dummy" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360069058350" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,7 +102,7 @@
       <file leaf-file-name="NameDecoration.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="69" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.55873924">
+            <state line="32" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.6876791">
               <folding />
             </state>
           </provider>
@@ -493,7 +490,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="new test for non-matches" />
+    <option name="LAST_COMMIT_MESSAGE" value="formatting" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -510,6 +507,7 @@
     <MESSAGE value="removing dead code" />
     <MESSAGE value="handling case where there is only a match on elements with single character abbreviation" />
     <MESSAGE value="new test for non-matches" />
+    <MESSAGE value="formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -601,7 +599,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="69" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.55873924">
+        <state line="32" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.6876791">
           <folding />
         </state>
       </provider>

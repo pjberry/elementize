@@ -12,21 +12,18 @@ class NameDecoration {
   val lowerCaseElementAbbreviations = elementAbbreviations.map(_.toLowerCase)
 
   def elementize(name: String) = {
+
     if (startIndexOfElement(name, 2) != -1) {
       val elementized = elementizedTwoCharacter(name, 2)
       val elementStart = elementized.indexOf("|")
-      val top = List().padTo(elementStart + 1, " ").mkString + "__"
-      val sides = List().padTo(elementStart , " ").mkString + "|  |"
-      val bottom = List().padTo(elementStart , " ").mkString + "|__|"
-      top + "\n" + sides + "\n" + elementized + "\n" + bottom
+      val boxStrings = BoxStrings(elementStart, 2)
+      boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
     }
     else if (startIndexOfElement(name, 1) != -1) {
       val elementized = elementizedTwoCharacter(name, 1)
       val elementStart = elementized.indexOf("|")
-      val top = List().padTo(elementStart + 1, " ").mkString + "_"
-      val sides = List().padTo(elementStart , " ").mkString + "| |"
-      val bottom = List().padTo(elementStart , " ").mkString + "|_|"
-      top + "\n" + sides + "\n" + elementized + "\n" + bottom
+      val boxStrings = BoxStrings(elementStart, 1)
+      boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
     }
     else {
       name
@@ -72,5 +69,17 @@ class NameDecoration {
     val charList = name.toList
     val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
     chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
+  }
+
+  class BoxStrings(val top: String, val sides: String, val bottom: String)
+
+  object BoxStrings {
+
+    def apply(elementStartPosition: Int, numberOfCharactersInAbbreviation: Int) = {
+      val top = List().padTo(elementStartPosition + 1, " ").mkString + ("_" * numberOfCharactersInAbbreviation)
+      val sides = List().padTo(elementStartPosition , " ").mkString + "|" + (" " * numberOfCharactersInAbbreviation) + "|"
+      val bottom = List().padTo(elementStartPosition , " ").mkString + "|"+ ("_" * numberOfCharactersInAbbreviation) + "|"
+      new BoxStrings(top, sides, bottom)
+    }
   }
 }
