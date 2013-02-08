@@ -12,63 +12,46 @@ class NameDecoration {
   val lowerCaseElementAbbreviations = elementAbbreviations.map(_.toLowerCase)
 
   def elementize(name: String) = {
+    val elementIndex = findElementIndex(name, 2)
 
-    if (startIndexOfElement(name, 2) != -1) {
-      val elementized = elementizedTwoCharacter(name, 2)
-      val elementStart = elementized.indexOf("|")
-      val boxStrings = BoxStrings(elementStart, 2)
-      boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
-    }
-    else if (startIndexOfElement(name, 1) != -1) {
-      val elementized = elementizedTwoCharacter(name, 1)
-      val elementStart = elementized.indexOf("|")
-      val boxStrings = BoxStrings(elementStart, 1)
-      boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
-    }
-    else {
-      name
-    }
+    elementIndex match {
+      case Some(e) =>
+        val boxStrings = BoxStrings(e.index, e.elementAbbreviation.size)
 
+        val charList = name.toList
+        val beforeElement = charList.take(e.index).mkString
+        val rawElement = charList.slice(e.index, e.index + e.elementAbbreviation.size)
+        val afterElement = charList.slice(e.index +  e.elementAbbreviation.size, charList.size).mkString
+        val elementized = beforeElement + "|" + rawElement.head.toUpper + rawElement.tail.mkString + "|" + afterElement
+
+        boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
+      case None =>
+        name
+    }
   }
 
-  private def elementizedTwoCharacter(name: String, numberOfCharsInAbbreviation: Int) = {
-    val charList = name.toList
-    val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
+  class ElementIndex(val elementAbbreviation: String, val index: Int)
 
-    val indexInChunkedName = chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
+  def findElementIndex(name: String, numberOfCharsInAbbreviation: Int): Option[ElementIndex] = {
 
-    val elementChunk = chunkedName(indexInChunkedName)
-    val indexInName = charList.indexOfSlice(elementChunk)
-
-    // before the chunk
-    val beforeElement = charList.take(indexInName)
-
-    // the chunk
-    val rawElement = charList.slice(indexInName, indexInName + numberOfCharsInAbbreviation)
-
-    val element = if (numberOfCharsInAbbreviation == 2) {
-      List(rawElement(0).toString.toUpperCase, rawElement(1))
+    if (numberOfCharsInAbbreviation == 0) {
+      None
     }
     else {
-      List(rawElement(0).toString.toUpperCase)
+      val charList = name.toList
+      val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
+      val index = chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
+
+      if (index == -1) {
+        findElementIndex(name, numberOfCharsInAbbreviation - 1)
+      }
+      else {
+        val elementChunk = chunkedName(index)
+        val indexInName = charList.indexOfSlice(elementChunk)
+        Some( new ElementIndex(elementChunk.mkString, indexInName) )
+      }
     }
 
-
-    val charArray = "|".toCharArray
-    val pipe = charArray(0)
-    val decorated =  (pipe :: element) :+ pipe
-
-    // after the chunk
-    val afterTheElement = charList.slice(indexInName +  numberOfCharsInAbbreviation, charList.size)
-
-    // elementize
-    (beforeElement ::: decorated ::: afterTheElement).mkString
-  }
-
-  private def startIndexOfElement(name: String, numberOfCharsInAbbreviation: Int) = {
-    val charList = name.toList
-    val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
-    chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
   }
 
   class BoxStrings(val top: String, val sides: String, val bottom: String)
