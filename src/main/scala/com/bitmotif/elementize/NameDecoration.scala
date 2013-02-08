@@ -10,6 +10,7 @@ package com.bitmotif.elementize
 @tailrec vs regular recursion ... nested if
 using object to construct
 clean up boxStrings
+variable names across the board
 */
 class NameDecoration {
 
@@ -40,22 +41,21 @@ class NameDecoration {
 
   def findElementIndex(name: String, numberOfCharsInAbbreviation: Int): Option[ElementIndex] = {
 
-    if (numberOfCharsInAbbreviation == 0) {
+    val charList = name.toList
+    val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
+    val index = chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
+
+    val nextCharSize = numberOfCharsInAbbreviation - 1
+    if (nextCharSize == 0 && index == -1) {
       None
     }
+    else if (index == -1) {
+      findElementIndex(name, nextCharSize)
+    }
     else {
-      val charList = name.toList
-      val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
-      val index = chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
-
-      if (index == -1) {
-        findElementIndex(name, numberOfCharsInAbbreviation - 1)
-      }
-      else {
-        val elementChunk = chunkedName(index)
-        val indexInName = charList.indexOfSlice(elementChunk)
-        Some( new ElementIndex(elementChunk.mkString, indexInName) )
-      }
+      val elementChunk = chunkedName(index)
+      val indexInName = charList.indexOfSlice(elementChunk)
+      Some( new ElementIndex(elementChunk.mkString, indexInName) )
     }
 
   }
