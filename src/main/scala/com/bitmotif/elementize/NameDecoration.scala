@@ -36,7 +36,7 @@ class NameDecoration {
 
   private def boxTheElement(parts: StringParts, e: ElementAbbreviationIndex): String = {
     val elementized = parts.sliceBeforeTheElementAbbreviation + "|" + parts.theElementAbbreviation + "|" + parts.sliceAfterTheElementAbbreviation
-    val boxStrings = BoxStrings(e)
+    val boxStrings = BoxedElementString(e)
     boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
   }
 
@@ -87,14 +87,14 @@ object StringParts {
   }
 }
 
-class BoxStrings(val top: String, val sides: String, val bottom: String)
+class BoxedElementString(val top: String, val sides: String, val bottom: String)
 
-object BoxStrings {
+object BoxedElementString {
 
   def apply(e: ElementAbbreviationIndex) = {
     val top = List().padTo(e.index + 1, " ").mkString + ("_" * e.numberOfLettersInAbbreviation)
     val sides = List().padTo(e.index , " ").mkString + "|" + (" " * e.numberOfLettersInAbbreviation) + "|"
     val bottom = List().padTo(e.index , " ").mkString + "|"+ ("_" * e.numberOfLettersInAbbreviation) + "|"
-    new BoxStrings(top, sides, bottom)
+    new BoxedElementString(top, sides, bottom)
   }
 }
