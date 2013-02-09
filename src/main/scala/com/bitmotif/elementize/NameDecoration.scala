@@ -62,7 +62,11 @@ class ElementAbbreviationIndex(val elementAbbreviation: String, val index: Int) 
   def numberOfLettersInAbbreviation: Int = elementAbbreviation.size
 }
 
-class StringParts(val sliceBeforeTheElementAbbreviation: String, val theElementAbbreviation: String, val sliceAfterTheElementAbbreviation: String)
+class StringParts(val sliceBeforeTheElementAbbreviation: String, val theElementAbbreviation: String, val sliceAfterTheElementAbbreviation: String) {
+  def numberOfLettersInAbbreviation: Int = theElementAbbreviation.size
+  def numberOfCharactersBeforeAbbreviation: Int = sliceBeforeTheElementAbbreviation.size
+}
+
 object StringParts {
 
   def apply(string: String, elementAbbreviationIndex: ElementAbbreviationIndex) = {
@@ -86,14 +90,14 @@ class BoxedElementString(val top: String, val aboveTheElement: String, val theEl
 object BoxedElementString {
 
   def apply(parts: StringParts) = {
-    val paddingToElementStart: String = List().padTo(parts.sliceBeforeTheElementAbbreviation.size, " ").mkString
-    val paddingOfElementAbbreviationSize: String = " " * parts.theElementAbbreviation.size
-    val horizontalLine = "_" * parts.theElementAbbreviation.size
+    val paddingToElementStart: String = List().padTo(parts.numberOfCharactersBeforeAbbreviation, " ").mkString
+    val paddingOfElementAbbreviationSize: String = " " * parts.numberOfLettersInAbbreviation
+    val horizontalLine = "_" * parts.numberOfLettersInAbbreviation
 
-    val top = List().padTo(parts.sliceBeforeTheElementAbbreviation.size + 1, " ").mkString + horizontalLine
+    val top = List().padTo(parts.numberOfCharactersBeforeAbbreviation + 1, " ").mkString + horizontalLine
     val aboveTheElement = paddingToElementStart + "|" + paddingOfElementAbbreviationSize + "|"
     val theElement = parts.sliceBeforeTheElementAbbreviation + "|" + parts.theElementAbbreviation + "|" + parts.sliceAfterTheElementAbbreviation
-    val belowTheElement = paddingToElementStart + "|"+ ("_" * parts.theElementAbbreviation.size) + "|"
+    val belowTheElement = paddingToElementStart + "|"+ ("_" * parts.numberOfLettersInAbbreviation) + "|"
 
     top + "\n" + aboveTheElement + "\n" + theElement + "\n" + belowTheElement
   }
