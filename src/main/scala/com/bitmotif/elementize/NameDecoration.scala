@@ -31,13 +31,7 @@ class NameDecoration {
 
   def assembleElementizedName(name: String, e: ElementAbbreviationIndex): String = {
     val parts = StringParts(name, e)
-    boxTheElement(parts, e)
-  }
-
-  private def boxTheElement(parts: StringParts, e: ElementAbbreviationIndex): String = {
-    val elementized = parts.sliceBeforeTheElementAbbreviation + "|" + parts.theElementAbbreviation + "|" + parts.sliceAfterTheElementAbbreviation
-    val boxStrings = BoxedElementString(e)
-    boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
+    BoxedElementString(parts)
   }
 
   @tailrec
@@ -87,14 +81,20 @@ object StringParts {
   }
 }
 
-class BoxedElementString(val top: String, val sides: String, val bottom: String)
+class BoxedElementString(val top: String, val aboveTheElement: String, val theElement: String, val belowTheElement: String)
 
 object BoxedElementString {
 
-  def apply(e: ElementAbbreviationIndex) = {
-    val top = List().padTo(e.index + 1, " ").mkString + ("_" * e.numberOfLettersInAbbreviation)
-    val sides = List().padTo(e.index , " ").mkString + "|" + (" " * e.numberOfLettersInAbbreviation) + "|"
-    val bottom = List().padTo(e.index , " ").mkString + "|"+ ("_" * e.numberOfLettersInAbbreviation) + "|"
-    new BoxedElementString(top, sides, bottom)
+  def apply(parts: StringParts) = {
+    val paddingToElementStart: String = List().padTo(parts.sliceBeforeTheElementAbbreviation.size, " ").mkString
+    val paddingOfElementAbbreviationSize: String = " " * parts.theElementAbbreviation.size
+    val horizontalLine = "_" * parts.theElementAbbreviation.size
+
+    val top = List().padTo(parts.sliceBeforeTheElementAbbreviation.size + 1, " ").mkString + horizontalLine
+    val aboveTheElement = paddingToElementStart + "|" + paddingOfElementAbbreviationSize + "|"
+    val theElement = parts.sliceBeforeTheElementAbbreviation + "|" + parts.theElementAbbreviation + "|" + parts.sliceAfterTheElementAbbreviation
+    val belowTheElement = paddingToElementStart + "|"+ ("_" * parts.theElementAbbreviation.size) + "|"
+
+    top + "\n" + aboveTheElement + "\n" + theElement + "\n" + belowTheElement
   }
 }
