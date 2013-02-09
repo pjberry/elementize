@@ -30,11 +30,7 @@ class NameDecoration {
   }
 
   def assembleElementizedName(name: String, e: ElementAbbreviationIndex): String = {
-    val characters = name.toList
-    val sliceBeforeTheElementAbbreviation = characters.take(e.index).mkString
-    val theElementAbbreviation = createElementAbbreviation(characters, e)
-    val sliceAfterTheElementAbbreviation = characters.slice(e.index + e.numberOfLettersInAbbreviation, characters.size).mkString
-    val parts = new StringParts(sliceBeforeTheElementAbbreviation, theElementAbbreviation, sliceAfterTheElementAbbreviation)
+    val parts = StringParts(name, e)
     boxTheElement(parts, e)
   }
 
@@ -42,13 +38,6 @@ class NameDecoration {
     val elementized = parts.sliceBeforeTheElementAbbreviation + "|" + parts.theElementAbbreviation + "|" + parts.sliceAfterTheElementAbbreviation
     val boxStrings = BoxStrings(e)
     boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
-  }
-
-  private def createElementAbbreviation(characters: List[Char], elementAbbreviationIndex: ElementAbbreviationIndex) = {
-    val startOfElementAbbreviation = elementAbbreviationIndex.index
-    val endOfElementAbbreviationPlusOne = elementAbbreviationIndex.index + elementAbbreviationIndex.numberOfLettersInAbbreviation
-    val elementSlice = characters.slice(startOfElementAbbreviation, endOfElementAbbreviationPlusOne)
-    elementSlice.head.toUpper + elementSlice.tail.mkString
   }
 
   @tailrec
@@ -80,6 +69,23 @@ class ElementAbbreviationIndex(val elementAbbreviation: String, val index: Int) 
 }
 
 class StringParts(val sliceBeforeTheElementAbbreviation: String, val theElementAbbreviation: String, val sliceAfterTheElementAbbreviation: String)
+object StringParts {
+
+  def apply(string: String, elementAbbreviationIndex: ElementAbbreviationIndex) = {
+    val characters = string.toList
+    val sliceBeforeTheElementAbbreviation = characters.take(elementAbbreviationIndex.index).mkString
+    val theElementAbbreviation = createElementAbbreviation(characters, elementAbbreviationIndex)
+    val sliceAfterTheElementAbbreviation = characters.slice(elementAbbreviationIndex.index + elementAbbreviationIndex.numberOfLettersInAbbreviation, characters.size).mkString
+    new StringParts(sliceBeforeTheElementAbbreviation, theElementAbbreviation, sliceAfterTheElementAbbreviation)
+  }
+
+  private def createElementAbbreviation(characters: List[Char], elementAbbreviationIndex: ElementAbbreviationIndex) = {
+    val startOfElementAbbreviation = elementAbbreviationIndex.index
+    val endOfElementAbbreviationPlusOne = elementAbbreviationIndex.index + elementAbbreviationIndex.numberOfLettersInAbbreviation
+    val elementSlice = characters.slice(startOfElementAbbreviation, endOfElementAbbreviationPlusOne)
+    elementSlice.head.toUpper + elementSlice.tail.mkString
+  }
+}
 
 class BoxStrings(val top: String, val sides: String, val bottom: String)
 
