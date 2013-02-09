@@ -20,19 +20,13 @@ class NameDecoration {
 
   val lowerCaseElementAbbreviations = elementAbbreviations.map(_.toLowerCase)
 
-  def boxElementAbbreviation(name: String) = {
-    val elementAbbreviationIndex = findElementAbbreviationIndex(name, 2)
+  private val MAX_ABBREVIATION_SIZE: Int = 2
 
-    elementAbbreviationIndex match {
-      case Some(e)  => assembleElementizedName(name, e)
+  def boxElementAbbreviation(name: String) =
+    findElementAbbreviationIndex(name, MAX_ABBREVIATION_SIZE) match {
+      case Some(e)  => BoxedElementString( StringParts(name, e) )
       case None     => name
     }
-  }
-
-  def assembleElementizedName(name: String, e: ElementAbbreviationIndex): String = {
-    val parts = StringParts(name, e)
-    BoxedElementString(parts)
-  }
 
   @tailrec
   private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[ElementAbbreviationIndex] = {
