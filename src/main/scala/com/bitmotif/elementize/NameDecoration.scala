@@ -1,5 +1,7 @@
 package com.bitmotif.elementize
 
+import annotation.tailrec
+
 /**
  * User: pjberry
  * Date: 2/3/13
@@ -39,7 +41,8 @@ class NameDecoration {
 
   class ElementIndex(val elementAbbreviation: String, val index: Int)
 
-  def findElementIndex(name: String, numberOfCharsInAbbreviation: Int): Option[ElementIndex] = {
+  @tailrec
+  private def findElementIndex(name: String, numberOfCharsInAbbreviation: Int): Option[ElementIndex] = {
 
     val charList = name.toList
     val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
