@@ -14,7 +14,7 @@ class NameDecoration_UT extends FunSpec {
     it("should box the two letter abbreviation") {
       val nameDecoration = new NameDecoration()
 
-      val decorated = nameDecoration.elementize("Anna Ferris")
+      val decorated = nameDecoration.boxElementAbbreviation("Anna Ferris")
 
       val expected =
         """   __
@@ -28,7 +28,7 @@ class NameDecoration_UT extends FunSpec {
     it("should box the single letter abbreviation if there is no two letter abbreviation") {
       val nameDecoration = new NameDecoration()
 
-      val decorated = nameDecoration.elementize("Jim Lee")
+      val decorated = nameDecoration.boxElementAbbreviation("Jim Lee")
 
       val expected =
         """  _
@@ -42,7 +42,7 @@ class NameDecoration_UT extends FunSpec {
     it("should return the name modified if we can't find an element in the name") {
       val nameDecoration = new NameDecoration()
 
-      val decorated = nameDecoration.elementize("Mel Lee")
+      val decorated = nameDecoration.boxElementAbbreviation("Mel Lee")
 
       val expected = "Mel Lee"
 

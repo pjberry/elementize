@@ -9,7 +9,7 @@ import annotation.tailrec
  */
 
 /*
-@tailrec vs regular recursion ... nested if
+
 using object to construct
 clean up boxStrings
 variable names across the board
@@ -20,18 +20,19 @@ class NameDecoration {
 
   val lowerCaseElementAbbreviations = elementAbbreviations.map(_.toLowerCase)
 
-  def elementize(name: String) = {
-    val elementIndex = findElementIndex(name, 2)
+  def boxElementAbbreviation(name: String) = {
+    val elementAbbreviationIndex = findElementAbbreviationIndex(name, 2)
 
-    elementIndex match {
+    elementAbbreviationIndex match {
       case Some(e) =>
         val boxStrings = BoxStrings(e.index, e.elementAbbreviation.size)
 
         val charList = name.toList
-        val beforeElement = charList.take(e.index).mkString
-        val rawElement = charList.slice(e.index, e.index + e.elementAbbreviation.size)
-        val afterElement = charList.slice(e.index +  e.elementAbbreviation.size, charList.size).mkString
-        val elementized = beforeElement + "|" + rawElement.head.toUpper + rawElement.tail.mkString + "|" + afterElement
+        val sliceBeforeTheElementAbbreviation = charList.take(e.index).mkString
+        val theElementAbbreviation = charList.slice(e.index, e.index + e.elementAbbreviation.size)
+        val sliceAfterTheElementAbbreviation = charList.slice(e.index +  e.elementAbbreviation.size, charList.size).mkString
+
+        val elementized = sliceBeforeTheElementAbbreviation + "|" + theElementAbbreviation.head.toUpper + theElementAbbreviation.tail.mkString + "|" + sliceAfterTheElementAbbreviation
 
         boxStrings.top + "\n" + boxStrings.sides + "\n" + elementized + "\n" + boxStrings.bottom
       case None =>
@@ -39,26 +40,26 @@ class NameDecoration {
     }
   }
 
-  class ElementIndex(val elementAbbreviation: String, val index: Int)
+  class ElementAbbreviationIndex(val elementAbbreviation: String, val index: Int)
 
   @tailrec
-  private def findElementIndex(name: String, numberOfCharsInAbbreviation: Int): Option[ElementIndex] = {
+  private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[ElementAbbreviationIndex] = {
 
     val charList = name.toList
-    val chunkedName = charList.sliding(numberOfCharsInAbbreviation).toList
+    val chunkedName = charList.sliding(numberOfLettersInAbbreviation).toList
     val index = chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
 
-    val nextCharSize = numberOfCharsInAbbreviation - 1
+    val nextCharSize = numberOfLettersInAbbreviation - 1
     if (nextCharSize == 0 && index == -1) {
       None
     }
     else if (index == -1) {
-      findElementIndex(name, nextCharSize)
+      findElementAbbreviationIndex(name, nextCharSize)
     }
     else {
       val elementChunk = chunkedName(index)
       val indexInName = charList.indexOfSlice(elementChunk)
-      Some( new ElementIndex(elementChunk.mkString, indexInName) )
+      Some( new ElementAbbreviationIndex(elementChunk.mkString, indexInName) )
     }
 
   }
@@ -67,10 +68,10 @@ class NameDecoration {
 
   object BoxStrings {
 
-    def apply(elementStartPosition: Int, numberOfCharactersInAbbreviation: Int) = {
-      val top = List().padTo(elementStartPosition + 1, " ").mkString + ("_" * numberOfCharactersInAbbreviation)
-      val sides = List().padTo(elementStartPosition , " ").mkString + "|" + (" " * numberOfCharactersInAbbreviation) + "|"
-      val bottom = List().padTo(elementStartPosition , " ").mkString + "|"+ ("_" * numberOfCharactersInAbbreviation) + "|"
+    def apply(elementStartPosition: Int, numberOfLettersInAbbreviation: Int) = {
+      val top = List().padTo(elementStartPosition + 1, " ").mkString + ("_" * numberOfLettersInAbbreviation)
+      val sides = List().padTo(elementStartPosition , " ").mkString + "|" + (" " * numberOfLettersInAbbreviation) + "|"
+      val bottom = List().padTo(elementStartPosition , " ").mkString + "|"+ ("_" * numberOfLettersInAbbreviation) + "|"
       new BoxStrings(top, sides, bottom)
     }
   }
