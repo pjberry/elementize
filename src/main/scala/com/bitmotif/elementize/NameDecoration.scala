@@ -29,7 +29,7 @@ class NameDecoration {
     }
 
   @tailrec
-  private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[SubstringIndex] = {
+  private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[Substring] = {
 
     val charList = name.toList
     val chunkedName = charList.sliding(numberOfLettersInAbbreviation).toList
@@ -45,7 +45,7 @@ class NameDecoration {
     else {
       val elementChunk = chunkedName(index)
       val indexInName = charList.indexOfSlice(elementChunk)
-      Some( SubstringIndex(elementChunk.mkString, indexInName) )
+      Some( Substring(elementChunk.mkString, indexInName) )
     }
 
   }
@@ -59,17 +59,17 @@ class StringParts(val sliceBeforeTheElementAbbreviation: String, val theElementA
 
 object StringParts {
 
-  def apply(string: String, elementAbbreviationIndex: SubstringIndex) = {
+  def apply(string: String, elementAbbreviationIndex: Substring) = {
     val characters = string.toList
     val sliceBeforeTheElementAbbreviation = characters.take(elementAbbreviationIndex.index).mkString
     val theElementAbbreviation = createElementAbbreviation(characters, elementAbbreviationIndex)
-    val sliceAfterTheElementAbbreviation = characters.slice(elementAbbreviationIndex.index + elementAbbreviationIndex.substringSize, characters.size).mkString
+    val sliceAfterTheElementAbbreviation = characters.slice(elementAbbreviationIndex.index + elementAbbreviationIndex.size, characters.size).mkString
     new StringParts(sliceBeforeTheElementAbbreviation, theElementAbbreviation, sliceAfterTheElementAbbreviation)
   }
 
-  private def createElementAbbreviation(characters: List[Char], elementAbbreviationIndex: SubstringIndex) = {
+  private def createElementAbbreviation(characters: List[Char], elementAbbreviationIndex: Substring) = {
     val startOfElementAbbreviation = elementAbbreviationIndex.index
-    val endOfElementAbbreviationPlusOne = elementAbbreviationIndex.index + elementAbbreviationIndex.substringSize
+    val endOfElementAbbreviationPlusOne = elementAbbreviationIndex.index + elementAbbreviationIndex.size
     val elementSlice = characters.slice(startOfElementAbbreviation, endOfElementAbbreviationPlusOne)
     elementSlice.head.toUpper + elementSlice.tail.mkString
   }

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56a61716-6b01-427a-9b9e-12eaf6ed6021" name="Default" comment="now">
+    <list default="true" id="56a61716-6b01-427a-9b9e-12eaf6ed6021" name="Default" comment="adding convenie">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/Substring_UT.scala" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/SubstringIndex_UT.scala" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/SubstringIndex.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/Substring.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -9,11 +12,15 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/PlaceHolder_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359932318732" ignored="false" />
     <file path="/ElementizeBuild.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359938073416" ignored="false" />
-    <file path="/Dummy.txt" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360242634894" ignored="false" />
+    <file path="/Dummy.txt" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360514941375" ignored="false" />
     <file path="/NameDecoration_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360073657925" ignored="false" />
-    <file path="/NameDecoration.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360242261862" ignored="false" />
-    <file path="/fragment.java" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1359942049550" ignored="false" />
-    <file path="/a.dummy" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360069058350" ignored="false" />
+    <file path="/NameDecoration.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360430677049" ignored="false" />
+    <file path="/fragment.java" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360514620475" ignored="false" />
+    <file path="/a.dummy" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360515401439" ignored="false" />
+    <file path="/Elementize.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360424085082" ignored="false" />
+    <file path="/MatchedSubstringIndex.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360514384049" ignored="false" />
+    <file path="/SubstringIndex.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360514598125" ignored="false" />
+    <file path="/SubstringIndex_UT.scala" changelist="56a61716-6b01-427a-9b9e-12eaf6ed6021" time="1360515219988" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +82,7 @@
       <file leaf-file-name="Elementize.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/Elementize.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
+            <state line="3" column="18" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,10 +106,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NameDecoration.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NameDecoration.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.6876791">
+            <state line="30" column="10" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Substring.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/Substring.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="7" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Substring_UT.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/Substring_UT.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="22" selection-start="535" selection-end="535" vertical-scroll-proportion="0.5232558">
               <folding />
             </state>
           </provider>
@@ -111,7 +136,7 @@
       <file leaf-file-name="NameDecoration_UT.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="29" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
+            <state line="47" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -149,7 +174,12 @@
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementized/NameDecoration_UT.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/bitmotif/Elementize.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/MatchedSubstringIndex.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/SubstringIndex.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/SubstringIndex_UT.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/Substring_UT.scala" />
       </list>
     </option>
   </component>
@@ -306,8 +336,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="ScalaTest" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
@@ -317,10 +349,19 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="FunSpec" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.bitmotif.elementize" />
+    </key>
   </component>
   <component name="RunManager" selected="ScalaTest.NameDecoration_UT">
     <configuration default="false" name="NameDecoration_UT" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
@@ -456,7 +497,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
@@ -490,7 +531,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="extracting/renaming class and adding test" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -508,6 +549,22 @@
     <MESSAGE value="handling case where there is only a match on elements with single character abbreviation" />
     <MESSAGE value="new test for non-matches" />
     <MESSAGE value="formatting" />
+    <MESSAGE value="now that we have something that works for both single and double letter abbreviations, it is time to start whittling away at some of the duplications.  First round, we do something about the underscore and pipe characters that we use to make the box" />
+    <MESSAGE value="Attempted to remove some duplication.  Used the option to indicate that there may be a case wher we find no match.  introduced another &quot;holder&quot; class.  Decreased the lines of code by about 15, don't think it is any less readable, but don't think it is any more readable." />
+    <MESSAGE value="some notes" />
+    <MESSAGE value="getting rid of the nested if statements.  still need to clear up what is going on." />
+    <MESSAGE value="labeling as tail recursive. made private." />
+    <MESSAGE value="renaming the variables/methods for consistency and to be a little more understandable." />
+    <MESSAGE value="created method that makes the element abbreviation" />
+    <MESSAGE value="created more container type classes, extracted methods to try to indicate the work steps" />
+    <MESSAGE value="changing the apply signature" />
+    <MESSAGE value="adding a field that will give the size of the abbreviation" />
+    <MESSAGE value="push some of the assembly work into the objects" />
+    <MESSAGE value="attempted to make name a little better" />
+    <MESSAGE value="Pushing the creation down again.  notice that we are getting pieces that are unit testable." />
+    <MESSAGE value="adding convenience methods" />
+    <MESSAGE value="Attempting to get a little more idiomatic in style and substance" />
+    <MESSAGE value="extracting/renaming class and adding test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -562,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/Elementize.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.sbt/boot/scala-2.9.2/org.scala-sbt/sbt/0.12.2/main-0.12.2.jar!/sbt/Project.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="6" selection-start="3721" selection-end="3721" vertical-scroll-proportion="0.0">
@@ -590,16 +640,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/Elementize.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="29" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
+        <state line="3" column="18" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/NameDecoration.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.6876791">
+        <state line="30" column="10" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/NameDecoration_UT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/bitmotif/elementize/Substring.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="7" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/com/bitmotif/elementize/Substring_UT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="22" selection-start="535" selection-end="535" vertical-scroll-proportion="0.5232558">
           <folding />
         </state>
       </provider>
