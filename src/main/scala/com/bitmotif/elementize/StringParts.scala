@@ -13,18 +13,18 @@ class StringParts(val prefix: String, val theString: String, val suffix: String)
 
 object StringParts {
 
-  def apply(string: String, substring: Substring) = {
+  def apply(string: String, substring: Substring, f: List[Char] => String) = {
     val characters = string.toList
     val sliceBeforeTheString = characters.take(substring.index).mkString
-    val theString = createString(characters, substring)
+    val theString = createString(characters, substring, f)
     val sliceAfterTheString = characters.slice(substring.index + substring.size, characters.size).mkString
     new StringParts(sliceBeforeTheString, theString, sliceAfterTheString)
   }
 
-  private def createString(characters: List[Char], substring: Substring) = {
+  private def createString(characters: List[Char], substring: Substring, f: List[Char] => String) = {
     val startOfString = substring.index
     val substringPlusSize = substring.index + substring.size
     val elementSlice = characters.slice(startOfString, substringPlusSize)
-    elementSlice.head.toUpper + elementSlice.tail.mkString
+    f(elementSlice)
   }
 }

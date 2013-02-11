@@ -9,14 +9,25 @@ import org.scalatest.FunSpec
  */
 class StringParts_UT extends FunSpec {
 
-  it("should ") {
-    val string = "abcdef"
+  private val string = "abcdef"
+  private val f = (x: List[Char]) => x.reverse.mkString
+
+  it("should modify substring's contents as defined by the function passed in") {
     val substring = Substring("de", 3)
 
-    val stringParts = StringParts(string, substring)
+    val stringParts = StringParts(string, substring, f)
 
     assert(stringParts.prefix === "abc")
-    assert(stringParts.theString === "De")
+    assert(stringParts.theString === "ed")
+    assert(stringParts.suffix === "f")
+  }
+
+  it("should do nothing to prefix and suffix") {
+    val substring = Substring("de", 3)
+
+    val stringParts = StringParts(string, substring, x => "")
+
+    assert(stringParts.prefix === "abc")
     assert(stringParts.suffix === "f")
   }
 

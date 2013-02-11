@@ -22,9 +22,11 @@ class NameDecoration {
 
   private val MAX_ABBREVIATION_SIZE: Int = 2
 
+  private val capitalizeString: List[Char] => String = x => x.head.toUpper + x.tail.mkString
+
   def boxElementAbbreviation(name: String) =
     findElementAbbreviationIndex(name, MAX_ABBREVIATION_SIZE) match {
-      case Some(substringIndex) => BoxedElementString( StringParts(name, substringIndex) )
+      case Some(substringIndex) => BoxedElementString( StringParts(name, substringIndex, capitalizeString) )
       case None                 => name
     }
 
