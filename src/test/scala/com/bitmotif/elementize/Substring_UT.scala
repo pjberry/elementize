@@ -19,7 +19,7 @@ class Substring_UT extends FunSpec {
     assert(substring.index === index)
   }
 
-  it("should give the size of the substring")  {
+  it("should give the size of the slice")  {
     val substring = Substring(aString, index)
 
     assert(substring.size === aString.size )

@@ -9,8 +9,6 @@ import annotation.tailrec
  */
 
 /*
-
-using object to construct
 clean up boxStrings
 variable names across the board
 */
@@ -26,12 +24,12 @@ class NameDecoration {
 
   def boxElementAbbreviation(name: String) =
     findElementAbbreviationIndex(name, MAX_ABBREVIATION_SIZE) match {
-      case Some(substringIndex) => BoxedElementString( StringParts(name, substringIndex, capitalizeString) )
-      case None                 => name
+      case Some(stringParts) => BoxedElementString( stringParts )
+      case None              => name
     }
 
   @tailrec
-  private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[Substring] = {
+  private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[StringParts] = {
 
     val charList = name.toList
     val chunkedName = charList.sliding(numberOfLettersInAbbreviation).toList
@@ -47,9 +45,8 @@ class NameDecoration {
     else {
       val elementChunk = chunkedName(index)
       val indexInName = charList.indexOfSlice(elementChunk)
-      Some( Substring(elementChunk.mkString, indexInName) )
+      Some( StringParts(name, indexInName, elementChunk.mkString, capitalizeString) )
     }
-
   }
 
 }
