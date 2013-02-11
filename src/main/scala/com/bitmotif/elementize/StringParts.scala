@@ -24,7 +24,7 @@ object StringParts {
   private def createString(characters: List[Char], substring: Substring, f: List[Char] => String) = {
     val startOfString = substring.index
     val substringPlusSize = substring.index + substring.size
-    val elementSlice = characters.slice(startOfString, substringPlusSize)
-    f(elementSlice)
+    val sliceOfInterest = characters.slice(startOfString, substringPlusSize)
+    f(sliceOfInterest)
   }
 }
