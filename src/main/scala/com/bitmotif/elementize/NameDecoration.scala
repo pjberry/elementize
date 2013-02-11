@@ -52,42 +52,19 @@ class NameDecoration {
 
 }
 
-class StringParts(val sliceBeforeTheElementAbbreviation: String, val theElementAbbreviation: String, val sliceAfterTheElementAbbreviation: String) {
-  def numberOfLettersInAbbreviation: Int = theElementAbbreviation.size
-  def numberOfCharactersBeforeAbbreviation: Int = sliceBeforeTheElementAbbreviation.size
-}
-
-object StringParts {
-
-  def apply(string: String, elementAbbreviationIndex: Substring) = {
-    val characters = string.toList
-    val sliceBeforeTheElementAbbreviation = characters.take(elementAbbreviationIndex.index).mkString
-    val theElementAbbreviation = createElementAbbreviation(characters, elementAbbreviationIndex)
-    val sliceAfterTheElementAbbreviation = characters.slice(elementAbbreviationIndex.index + elementAbbreviationIndex.size, characters.size).mkString
-    new StringParts(sliceBeforeTheElementAbbreviation, theElementAbbreviation, sliceAfterTheElementAbbreviation)
-  }
-
-  private def createElementAbbreviation(characters: List[Char], elementAbbreviationIndex: Substring) = {
-    val startOfElementAbbreviation = elementAbbreviationIndex.index
-    val endOfElementAbbreviationPlusOne = elementAbbreviationIndex.index + elementAbbreviationIndex.size
-    val elementSlice = characters.slice(startOfElementAbbreviation, endOfElementAbbreviationPlusOne)
-    elementSlice.head.toUpper + elementSlice.tail.mkString
-  }
-}
-
 class BoxedElementString(val top: String, val aboveTheElement: String, val theElement: String, val belowTheElement: String)
 
 object BoxedElementString {
 
   def apply(parts: StringParts) = {
-    val paddingToElementStart: String = List().padTo(parts.numberOfCharactersBeforeAbbreviation, " ").mkString
-    val paddingOfElementAbbreviationSize: String = " " * parts.numberOfLettersInAbbreviation
-    val horizontalLine = "_" * parts.numberOfLettersInAbbreviation
+    val paddingToElementStart: String = List().padTo(parts.prefixSize, " ").mkString
+    val paddingOfElementAbbreviationSize: String = " " * parts.stringSize
+    val horizontalLine = "_" * parts.stringSize
 
-    val top = List().padTo(parts.numberOfCharactersBeforeAbbreviation + 1, " ").mkString + horizontalLine
+    val top = List().padTo(parts.prefixSize + 1, " ").mkString + horizontalLine
     val aboveTheElement = paddingToElementStart + "|" + paddingOfElementAbbreviationSize + "|"
-    val theElement = parts.sliceBeforeTheElementAbbreviation + "|" + parts.theElementAbbreviation + "|" + parts.sliceAfterTheElementAbbreviation
-    val belowTheElement = paddingToElementStart + "|"+ ("_" * parts.numberOfLettersInAbbreviation) + "|"
+    val theElement = parts.prefix + "|" + parts.theString + "|" + parts.suffix
+    val belowTheElement = paddingToElementStart + "|"+ ("_" * parts.stringSize) + "|"
 
     top + "\n" + aboveTheElement + "\n" + theElement + "\n" + belowTheElement
   }
