@@ -20,7 +20,7 @@ class NameDecoration {
 
   private val MAX_ABBREVIATION_SIZE: Int = 2
 
-  private val capitalizeString: List[Char] => String = x => x.head.toUpper + x.tail.mkString
+  private val capitalizeString: String => String = x => x.head.toUpper + x.tail.mkString
 
   def boxElementAbbreviation(name: String) =
     findElementAbbreviationIndex(name, MAX_ABBREVIATION_SIZE) match {
@@ -45,7 +45,7 @@ class NameDecoration {
     else {
       val elementChunk = chunkedName(index)
       val indexInName = charList.indexOfSlice(elementChunk)
-      Some( StringParts(name, indexInName, elementChunk.mkString, capitalizeString) )
+      Some( StringParts(OriginalString(name), Substring(elementChunk.mkString, indexInName), capitalizeString) )
     }
   }
 
