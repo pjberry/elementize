@@ -10,7 +10,7 @@ import org.scalatest.FunSpec
 class StringParts_UT extends FunSpec {
 
   private val original = new OriginalString("abcdef")
-  private val substring = new Substring("de", 3)
+  private val substring = new Substring("de")
   private val f = (x: String) => x.reverse
 
   it("should modify slice's contents as defined by the function passed in") {

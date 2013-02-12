@@ -10,17 +10,15 @@ import org.scalatest.FunSpec
 class Substring_UT extends FunSpec {
 
   private val aString: String = "a string"
-  private val index = 2
 
   it("should have the values used in construction") {
-    val substring = Substring(aString, index)
+    val substring = Substring(aString)
 
-    assert(substring.substring === aString)
-    assert(substring.index === index)
+    assert(substring.value === aString)
   }
 
   it("should give the size of the slice")  {
-    val substring = Substring(aString, index)
+    val substring = Substring(aString)
 
     assert(substring.size === aString.size )
   }

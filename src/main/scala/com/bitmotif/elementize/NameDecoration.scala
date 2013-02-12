@@ -44,8 +44,7 @@ class NameDecoration {
     }
     else {
       val elementChunk = chunkedName(index)
-      val indexInName = charList.indexOfSlice(elementChunk)
-      Some( StringParts(OriginalString(name), Substring(elementChunk.mkString, indexInName), capitalizeString) )
+      Some( StringParts(OriginalString(name), Substring(elementChunk.mkString), capitalizeString) )
     }
   }
 

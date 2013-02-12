@@ -14,24 +14,29 @@ class StringParts(val prefix: String, val theString: String, val suffix: String)
 object StringParts {
 
   def apply(string: OriginalString, substring: Substring, f: String => String) = {
-    val sliceBeforeTheString = string.take(substring.index)
-    val theString = createString(string, substring, f)
-    val sliceAfterTheString = string.slice(substring.index + substring.size, string.size)
+    val sliceBeforeTheString = string.before(substring)
+    val theString = f(substring.value)
+    val sliceAfterTheString = string.after(substring)
     new StringParts(sliceBeforeTheString, theString, sliceAfterTheString)
   }
-
-  private def createString(string: OriginalString, substring: Substring, f: String => String) = {
-    val startOfString = substring.index
-    val substringPlusSize = substring.index + substring.size
-    val sliceOfInterest = string.slice(startOfString, substringPlusSize)
-    f(sliceOfInterest)
-  }
-
 }
 
 class OriginalString(val original: String)  {
+
+  def before(substring: Substring) = {
+    val upTo = original.indexOfSlice(substring.value)
+    original.slice(0, upTo)
+  }
+
+  def after(substring: Substring) = {
+    val startIndex = original.indexOfSlice(substring.value) + substring.size
+    original.slice(startIndex, original.size)
+  }
+
   def take(index: Int) = original.take(index)
+
   def slice(from: Int, until: Int) = original.slice(from, until)
+
   def size = original.size
 }
 

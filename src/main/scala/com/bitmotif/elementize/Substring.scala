@@ -5,12 +5,12 @@ package com.bitmotif.elementize
  * Date: 2/10/13
  * Time: 10:35 AM
  */
-class Substring(val substring: String, val index: Int)  {
-  def size: Int = substring.size
+class Substring(val value: String)  {
+  def size: Int = value.size
 }
 
 object Substring {
-  def apply(substring: String, index: Int) = {
-    new Substring(substring, index)
+  def apply(value: String) = {
+    new Substring(value)
   }
 }
