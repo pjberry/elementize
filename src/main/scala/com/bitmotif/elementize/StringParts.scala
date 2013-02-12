@@ -13,9 +13,9 @@ class StringParts(val prefix: String, val theString: String, val suffix: String)
 
 object StringParts {
 
-  def apply(string: OriginalString, substring: Substring, f: String => String) = {
+  def apply(string: OriginalString, substring: Substring, f: Substring => String) = {
     val sliceBeforeTheString = string.before(substring)
-    val theString = f(substring.value)
+    val theString = f(substring)
     val sliceAfterTheString = string.after(substring)
     new StringParts(sliceBeforeTheString, theString, sliceAfterTheString)
   }
