@@ -7,11 +7,11 @@ import org.scalatest.FunSpec
  * Date: 2/13/13
  * Time: 6:30 AM
  */
-class BoxedElementString_UT extends FunSpec {
+class BoxedSubstring_UT extends FunSpec {
 
-  describe("BoxedElementString") {
+  describe("Boxed Substring") {
 
-    it("given string parts, the substring should be altered by the input function and boxed") {
+    it("the substring should, given string parts,be altered by the input function and boxed") {
       val stringParts = StringParts(OriginalString("abcdefg"), Substring("cd"), Substring => "XX")
 
       val expected =
@@ -20,7 +20,7 @@ class BoxedElementString_UT extends FunSpec {
                 |ab|XX|efg
                 |  |__|""".stripMargin
 
-      assert(BoxedElementString(stringParts).toString == expected)
+      assert(BoxedSubstring(stringParts).toString == expected)
     }
   }
 

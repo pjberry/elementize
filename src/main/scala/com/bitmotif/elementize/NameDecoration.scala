@@ -9,7 +9,6 @@ import annotation.tailrec
  */
 
 /*
-clean up boxStrings
 variable names across the board
 */
 class NameDecoration {
@@ -24,7 +23,7 @@ class NameDecoration {
 
   def boxElementAbbreviation(name: String) =
     findElementAbbreviationIndex(name, MAX_ABBREVIATION_SIZE) match {
-      case Some(stringParts) => BoxedElementString( stringParts ).toString
+      case Some(stringParts) => BoxedSubstring( stringParts ).toString
       case None              => name
     }
 

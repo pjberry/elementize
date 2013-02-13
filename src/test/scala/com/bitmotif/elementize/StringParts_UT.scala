@@ -13,19 +13,20 @@ class StringParts_UT extends FunSpec {
   private val substring = new Substring("de")
   private val f = (x: Substring) => x.value.reverse
 
-  it("should modify slice's contents as defined by the function passed in") {
-    val stringParts = StringParts(original, substring, f)
+  describe("String Parts") {
+    it("should modify slice's contents as defined by the function passed in") {
+      val stringParts = StringParts(original, substring, f)
 
-    assert(stringParts.prefix === "abc")
-    assert(stringParts.theString === "ed")
-    assert(stringParts.suffix === "f")
+      assert(stringParts.prefix === "abc")
+      assert(stringParts.theString === "ed")
+      assert(stringParts.suffix === "f")
+    }
+
+    it("should do nothing to prefix and suffix") {
+      val stringParts = StringParts(original, substring, x => "")
+
+      assert(stringParts.prefix === "abc")
+      assert(stringParts.suffix === "f")
+    }
   }
-
-  it("should do nothing to prefix and suffix") {
-    val stringParts = StringParts(original, substring, x => "")
-
-    assert(stringParts.prefix === "abc")
-    assert(stringParts.suffix === "f")
-  }
-
 }
