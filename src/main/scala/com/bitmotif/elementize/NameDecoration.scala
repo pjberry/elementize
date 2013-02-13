@@ -24,7 +24,7 @@ class NameDecoration {
 
   def boxElementAbbreviation(name: String) =
     findElementAbbreviationIndex(name, MAX_ABBREVIATION_SIZE) match {
-      case Some(stringParts) => BoxedElementString( stringParts )
+      case Some(stringParts) => BoxedElementString( stringParts ).toString
       case None              => name
     }
 
@@ -48,22 +48,4 @@ class NameDecoration {
     }
   }
 
-}
-
-class BoxedElementString(val top: String, val aboveTheElement: String, val theElement: String, val belowTheElement: String)
-
-object BoxedElementString {
-
-  def apply(parts: StringParts) = {
-    val paddingToElementStart: String = List().padTo(parts.prefixSize, " ").mkString
-    val paddingOfElementAbbreviationSize: String = " " * parts.stringSize
-    val horizontalLine = "_" * parts.stringSize
-
-    val top = List().padTo(parts.prefixSize + 1, " ").mkString + horizontalLine
-    val aboveTheElement = paddingToElementStart + "|" + paddingOfElementAbbreviationSize + "|"
-    val theElement = parts.prefix + "|" + parts.theString + "|" + parts.suffix
-    val belowTheElement = paddingToElementStart + "|"+ ("_" * parts.stringSize) + "|"
-
-    top + "\n" + aboveTheElement + "\n" + theElement + "\n" + belowTheElement
-  }
 }
