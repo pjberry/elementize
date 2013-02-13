@@ -20,26 +20,3 @@ object StringParts {
     new StringParts(sliceBeforeTheString, theString, sliceAfterTheString)
   }
 }
-
-class OriginalString(val original: String)  {
-
-  def before(substring: Substring) = {
-    val upTo = original.indexOfSlice(substring.value)
-    original.slice(0, upTo)
-  }
-
-  def after(substring: Substring) = {
-    val startIndex = original.indexOfSlice(substring.value) + substring.size
-    original.slice(startIndex, original.size)
-  }
-
-  def take(index: Int) = original.take(index)
-
-  def slice(from: Int, until: Int) = original.slice(from, until)
-
-  def size = original.size
-}
-
-object OriginalString {
-  def apply(original: String) = new OriginalString(original)
-}
