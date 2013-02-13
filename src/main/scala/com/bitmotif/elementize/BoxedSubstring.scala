@@ -14,15 +14,15 @@ class BoxedSubstring(val top: String, val aboveTheSubstring: String, val theSubs
 
 object BoxedSubstring {
 
-  def apply(parts: StringParts) = {
-    val paddingToStart: String = List().padTo(parts.prefixSize, " ").mkString
-    val paddingOfSubstringSize: String = " " * parts.stringSize
-    val horizontalLine = "_" * parts.stringSize
+  private def padTo: Int => String = length => List().padTo(length, " ").mkString
+  private def underScoreTo: Int => String = length => List().padTo(length, "_").mkString
 
-    val top = List().padTo(parts.prefixSize + 1, " ").mkString + horizontalLine
-    val aboveTheSubstring = paddingToStart + "|" + paddingOfSubstringSize + "|"
+  def apply(parts: StringParts) = {
+
+    val top = padTo(parts.prefixSize + 1) + underScoreTo(parts.stringSize)
+    val aboveTheSubstring = padTo(parts.prefixSize) + "|" + padTo(parts.stringSize) + "|"
     val theSubstring = parts.prefix + "|" + parts.theString + "|" + parts.suffix
-    val belowTheSubstring = paddingToStart + "|"+ ("_" * parts.stringSize) + "|"
+    val belowTheSubstring = padTo(parts.prefixSize) + "|" + underScoreTo(parts.stringSize) + "|"
 
     new BoxedSubstring(top, aboveTheSubstring, theSubstring, belowTheSubstring)
   }
