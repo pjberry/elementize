@@ -24,21 +24,22 @@ class OriginalString_UT extends FunSpec {
       val originalString = OriginalString(string)
 
       assert(originalString.before( Substring("XXX") ) === "")
-     }
+    }
   }
 
   describe("the contents after a substring") {
 
-      it("should return a string aftter the substring") {
-        val originalString = OriginalString(string)
+    it("should return a string aftter the substring") {
+      val originalString = OriginalString(string)
 
-        assert(originalString.after(substring) === "i")
-      }
-
-      it("should handle when the substring is not found in the string") {
-        val originalString = OriginalString(string)
-
-        assert(originalString.after( Substring("XXX") ) === "")
-       }
+      assert(originalString.after(substring) === "i")
     }
+
+    it("should handle when the substring is not found in the string") {
+      val originalString = OriginalString(string)
+
+      assert(originalString.after( Substring("XXX") ) === "")
+    }
+  }
+
 }

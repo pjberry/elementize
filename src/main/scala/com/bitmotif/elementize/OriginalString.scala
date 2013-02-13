@@ -17,11 +17,6 @@ class OriginalString(val original: String)  {
     if (index < 0) "" else  original.slice(index + substring.size, original.size)
   }
 
-  def take(index: Int) = original.take(index)
-
-  def slice(from: Int, until: Int) = original.slice(from, until)
-
-  def size = original.size
 }
 
 object OriginalString {
