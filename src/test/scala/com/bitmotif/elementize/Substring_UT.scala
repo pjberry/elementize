@@ -30,4 +30,11 @@ class Substring_UT extends FunSpec {
     assert(transformedSubstring === "gnirts a")
   }
 
+  it("should do nothing if no function given")  {
+    val substring = Substring(aString)
+
+    val transformedSubstring = substring.transform
+    assert(transformedSubstring === aString)
+  }
+
 }
