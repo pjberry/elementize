@@ -5,16 +5,16 @@ package com.bitmotif.elementize
  * Date: 2/13/13
  * Time: 5:58 AM
  */
-class OriginalString(val original: String)  {
+class OriginalString(val value: String)  {
 
   def before(substring: Substring) = {
-    val upTo = original.indexOfSlice(substring.value)
-    original.slice(0, upTo)
+    val upTo = value.indexOfSlice(substring.value)
+    value.slice(0, upTo)
   }
 
   def after(substring: Substring) = {
-    val index = original.indexOfSlice(substring.value)
-    if (index < 0) "" else  original.slice(index + substring.size, original.size)
+    val index = value.indexOfSlice(substring.value)
+    if (index < 0) "" else  value.slice(index + substring.size, value.size)
   }
 
 }
