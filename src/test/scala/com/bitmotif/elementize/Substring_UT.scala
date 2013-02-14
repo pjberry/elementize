@@ -20,7 +20,14 @@ class Substring_UT extends FunSpec {
   it("should give the size of the slice")  {
     val substring = Substring(aString)
 
-    assert(substring.size === aString.size )
+    assert(substring.size === aString.size)
+  }
+
+  it("should transform based on the the function given")  {
+    val substring = Substring(aString, (x: String) => x.reverse)
+
+    val transformedSubstring = substring.transform
+    assert(transformedSubstring === "gnirts a")
   }
 
 }
