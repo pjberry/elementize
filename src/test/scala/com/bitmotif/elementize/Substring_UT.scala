@@ -23,18 +23,4 @@ class Substring_UT extends FunSpec {
     assert(substring.size === aString.size)
   }
 
-  it("should transform based on the the function given")  {
-    val substring = Substring(aString, (x: String) => x.reverse)
-
-    val transformedSubstring = substring.transform
-    assert(transformedSubstring === "gnirts a")
-  }
-
-  it("should do nothing if no function given")  {
-    val substring = Substring(aString)
-
-    val transformedSubstring = substring.transform
-    assert(transformedSubstring === aString)
-  }
-
 }
