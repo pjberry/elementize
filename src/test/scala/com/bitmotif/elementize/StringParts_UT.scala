@@ -14,16 +14,6 @@ class StringParts_UT extends FunSpec {
   private val f = (x: Substring) => x.value.reverse
 
   describe("String Parts") {
-    it("should have the same components as those passed in") {
-      val stringParts = StringParts(original, substring)
-
-      assert(stringParts.prefix === "abc")
-      assert(stringParts.theString === "de")
-      assert(stringParts.suffix === "f")
-    }
-  }
-
-  describe("String Parts Old") {
       it("should modify slice's contents as defined by the function passed in") {
         val stringParts = StringParts(original, substring, f)
 
