@@ -39,7 +39,7 @@ class NameDecoration {
     }
     else {
       val elementChunk = chunkedName(index)
-      Some( TripartiteString(OriginalString(name), Substring(elementChunk.mkString), capitalizeString) )
+      Some( TripartiteString(EnhancedString(name), Substring(elementChunk.mkString), capitalizeString) )
     }
   }
 

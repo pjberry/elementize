@@ -9,7 +9,7 @@ import org.scalatest.FunSpec
  */
 class TripartiteString_UT extends FunSpec {
 
-  private val original = new OriginalString("abcdef")
+  private val original = new EnhancedString("abcdef")
   private val substring = new Substring("de")
   private val f = (x: Substring) => x.value.reverse
 

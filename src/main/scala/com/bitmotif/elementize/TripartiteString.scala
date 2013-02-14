@@ -13,7 +13,7 @@ class TripartiteString(val beginning: String, val middle: String, val end: Strin
 
 object TripartiteString {
 
-  def apply(string: OriginalString, substring: Substring, f: Substring => String) = {
+  def apply(string: EnhancedString, substring: Substring, f: Substring => String) = {
     val sliceBeforeTheString = string.before(substring)
     val theString = f(substring)
     val sliceAfterTheString = string.after(substring)

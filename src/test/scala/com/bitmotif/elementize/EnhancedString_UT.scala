@@ -7,7 +7,7 @@ import org.scalatest.FunSpec
  * Date: 2/13/13
  * Time: 5:59 AM
  */
-class OriginalString_UT extends FunSpec {
+class EnhancedString_UT extends FunSpec {
 
   private val string = "abcdefghi"
   private val substring = Substring("fgh")
@@ -15,13 +15,13 @@ class OriginalString_UT extends FunSpec {
   describe("the contents before a substring") {
 
     it("should return a string up to (but not including) the substring") {
-      val originalString = OriginalString(string)
+      val originalString = EnhancedString(string)
 
       assert(originalString.before(substring) === "abcde")
     }
 
     it("should handle when the substring is not found in the string") {
-      val originalString = OriginalString(string)
+      val originalString = EnhancedString(string)
 
       assert(originalString.before( Substring("XXX") ) === "")
     }
@@ -30,13 +30,13 @@ class OriginalString_UT extends FunSpec {
   describe("the contents after a substring") {
 
     it("should return a string aftter the substring") {
-      val originalString = OriginalString(string)
+      val originalString = EnhancedString(string)
 
       assert(originalString.after(substring) === "i")
     }
 
     it("should handle when the substring is not found in the string") {
-      val originalString = OriginalString(string)
+      val originalString = EnhancedString(string)
 
       assert(originalString.after( Substring("XXX") ) === "")
     }

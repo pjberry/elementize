@@ -5,7 +5,7 @@ package com.bitmotif.elementize
  * Date: 2/13/13
  * Time: 5:58 AM
  */
-class OriginalString(val value: String)  {
+class EnhancedString(val value: String)  {
 
   def before(substring: Substring) = {
     val upTo = value.indexOfSlice(substring.value)
@@ -19,6 +19,6 @@ class OriginalString(val value: String)  {
 
 }
 
-object OriginalString {
-  def apply(original: String) = new OriginalString(original)
+object EnhancedString {
+  def apply(original: String) = new EnhancedString(original)
 }
