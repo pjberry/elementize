@@ -7,7 +7,7 @@ import org.scalatest.FunSpec
  * Date: 2/10/13
  * Time: 11:01 AM
  */
-class StringParts_UT extends FunSpec {
+class TripartiteString_UT extends FunSpec {
 
   private val original = new OriginalString("abcdef")
   private val substring = new Substring("de")
@@ -15,18 +15,18 @@ class StringParts_UT extends FunSpec {
 
   describe("String Parts") {
       it("should modify slice's contents as defined by the function passed in") {
-        val stringParts = StringParts(original, substring, f)
+        val stringParts = TripartiteString(original, substring, f)
 
-        assert(stringParts.prefix === "abc")
-        assert(stringParts.theString === "ed")
-        assert(stringParts.suffix === "f")
+        assert(stringParts.beginning === "abc")
+        assert(stringParts.middle === "ed")
+        assert(stringParts.end === "f")
       }
 
       it("should do nothing to prefix and suffix") {
-        val stringParts = StringParts(original, substring, x => "")
+        val stringParts = TripartiteString(original, substring, x => "")
 
-        assert(stringParts.prefix === "abc")
-        assert(stringParts.suffix === "f")
+        assert(stringParts.beginning === "abc")
+        assert(stringParts.end === "f")
       }
     }
 }

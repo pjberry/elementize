@@ -12,7 +12,7 @@ class BoxedSubstring_UT extends FunSpec {
   describe("Boxed Substring") {
 
     it("the substring should, given string parts,be altered by the input function and boxed") {
-      val stringParts = StringParts(OriginalString("abcdefg"), Substring("cd"), Substring => "XX")
+      val stringParts = TripartiteString(OriginalString("abcdefg"), Substring("cd"), Substring => "XX")
 
       val expected =
               """   __

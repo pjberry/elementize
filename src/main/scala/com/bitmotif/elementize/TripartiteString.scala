@@ -6,17 +6,17 @@ package com.bitmotif.elementize
  * Time: 11:01 AM
  */
 
-class StringParts(val prefix: String, val theString: String, val suffix: String) {
-  def stringSize: Int = theString.size
-  def prefixSize: Int = prefix.size
+class TripartiteString(val beginning: String, val middle: String, val end: String) {
+  def stringSize: Int = middle.size
+  def prefixSize: Int = beginning.size
 }
 
-object StringParts {
+object TripartiteString {
 
   def apply(string: OriginalString, substring: Substring, f: Substring => String) = {
     val sliceBeforeTheString = string.before(substring)
     val theString = f(substring)
     val sliceAfterTheString = string.after(substring)
-    new StringParts(sliceBeforeTheString, theString, sliceAfterTheString)
+    new TripartiteString(sliceBeforeTheString, theString, sliceAfterTheString)
   }
 }

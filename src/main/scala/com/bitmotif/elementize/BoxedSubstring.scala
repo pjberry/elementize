@@ -18,11 +18,11 @@ object BoxedSubstring {
   private def whiteSpaceTo: Int => String = padTo(" ")
   private def underScoreTo: Int => String = padTo("_")
 
-  def apply(parts: StringParts) = {
+  def apply(parts: TripartiteString) = {
 
     val top = whiteSpaceTo(parts.prefixSize + 1) + underScoreTo(parts.stringSize)
     val aboveTheSubstring = whiteSpaceTo(parts.prefixSize) + "|" + whiteSpaceTo(parts.stringSize) + "|"
-    val theSubstring = parts.prefix + "|" + parts.theString + "|" + parts.suffix
+    val theSubstring = parts.beginning + "|" + parts.middle + "|" + parts.end
     val belowTheSubstring = whiteSpaceTo(parts.prefixSize) + "|" + underScoreTo(parts.stringSize) + "|"
 
     new BoxedSubstring(top, aboveTheSubstring, theSubstring, belowTheSubstring)

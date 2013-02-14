@@ -24,7 +24,7 @@ class NameDecoration {
     }
 
   @tailrec
-  private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[StringParts] = {
+  private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[TripartiteString] = {
 
     val charList = name.toList
     val chunkedName = charList.sliding(numberOfLettersInAbbreviation).toList
@@ -39,7 +39,7 @@ class NameDecoration {
     }
     else {
       val elementChunk = chunkedName(index)
-      Some( StringParts(OriginalString(name), Substring(elementChunk.mkString), capitalizeString) )
+      Some( TripartiteString(OriginalString(name), Substring(elementChunk.mkString), capitalizeString) )
     }
   }
 
