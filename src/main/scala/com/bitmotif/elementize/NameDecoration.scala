@@ -16,6 +16,7 @@ class NameDecoration {
   private val MAX_ABBREVIATION_SIZE: Int = 2
 
   private val capitalizeString: Substring => String = x => x.value.head.toUpper + x.value.tail.mkString
+  private val capitalize: String => String = aString => aString.head.toUpper + aString.tail.mkString
 
   def boxElementAbbreviation(name: String) =
     findElementAbbreviationIndex(name, MAX_ABBREVIATION_SIZE) match {
