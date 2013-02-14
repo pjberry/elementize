@@ -8,10 +8,7 @@ import annotation.tailrec
  * Time: 7:05 PM
  */
 
-/*
-variable names across the board
-*/
-class NameDecoration {
+class ElementBoxer {
 
   private val MAX_ABBREVIATION_SIZE: Int = 2
 
@@ -25,10 +22,8 @@ class NameDecoration {
 
   @tailrec
   private def findElementAbbreviationIndex(name: String, numberOfLettersInAbbreviation: Int): Option[TripartiteString] = {
-
-    val charList = name.toList
-    val chunkedName = charList.sliding(numberOfLettersInAbbreviation).toList
-    val index = chunkedName.indexWhere(chunk => lowerCaseElementAbbreviations.contains(chunk.mkString.toLowerCase))
+    val nameSlices = name.sliding(numberOfLettersInAbbreviation).toList
+    val index = nameSlices.indexWhere(slice => lowerCaseElementAbbreviations.contains(slice.mkString.toLowerCase))
 
     val nextCharSize = numberOfLettersInAbbreviation - 1
     if (nextCharSize == 0 && index == -1) {
@@ -38,7 +33,7 @@ class NameDecoration {
       findElementAbbreviationIndex(name, nextCharSize)
     }
     else {
-      val elementChunk = chunkedName(index)
+      val elementChunk = nameSlices(index)
       Some( TripartiteString(EnhancedString(name), Substring(elementChunk.mkString), capitalizeString) )
     }
   }
