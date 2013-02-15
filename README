@@ -1,1 +1,15 @@
  Outputs a name styled like those in the _Breaking Bad_ credits.
+
+ For example, "J. Robins" becomes
+                   __
+                  |  |
+            J. Rob|Bi|ns
+                  |__|
+
+ Or, "Davey von Bohlen" becomes
+               _
+              | |
+            Da|V|ey von Bohlen
+              |_|
+
+Ultimately, this project is just a way to goof around with Scala's programming concepts.
